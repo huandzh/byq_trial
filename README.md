@@ -58,7 +58,7 @@ python -m unittest
 
 推荐在byq_trial根目录启动jupyter notebook，调用byq_trial模块进行百度舆情的试用。
 
-TODO：提供试用示例
+exmaples目录（ https://github.com/huandzh/byq_trial/tree/master/examples ），欢迎参考。
 
 ## 如何贡献
 
