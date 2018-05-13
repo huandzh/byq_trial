@@ -1,5 +1,7 @@
 # byq_trial
 
+[![Build Status](https://travis-ci.org/huandzh/byq_trial.svg?branch=master)](https://travis-ci.org/huandzh/byq_trial)
+
 百度舆情试用相关代码(codes for baidu yuqing trials)，`byq_trial.SimpleAuth`和`byq_trial.APICall`提供了快速利用百度舆情API的python调用方式。
 
 注意：`byq_trial`**不是**百度舆情官方的调用方式，也不能起到SDK的作用，请向百度舆情咨询相关情况。
@@ -58,14 +60,12 @@ python -m unittest
 
 推荐在byq_trial根目录启动jupyter notebook，调用byq_trial模块进行百度舆情的试用。
 
-TODO：提供试用示例
+exmaples目录（ https://github.com/huandzh/byq_trial/tree/master/examples ），欢迎参考。
 
 ## 如何贡献
 
 您可以通过pull requests提供代码或示例，也可以通过issues提交问题。
 
 * 问题：欢迎通过issues反馈软件包的bug，但百度舆情用法本身请您使用stackoverflaw等其他网站
-* 代码：提交pull requests前请进行单元测试和PEP8测试
+* 代码：提交pull requests前请进行单元测试和PEP8测试(由于有效的测试需要使用密钥，CI仅提供了pep8的测试）
 * 示例：请在代码库中的examples目录下创建新的示例，markdown格式
-
-TODO：提供CI
