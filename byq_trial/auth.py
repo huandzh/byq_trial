@@ -190,8 +190,7 @@ class BasicBCESigner:
             bce_version,
             access_key,
             timestamp,
-            expire_time
-            ])
+            expire_time])
         signed = hmac.new(
             secret_key.encode('utf-8'),
             to_sign.encode('utf-8'),
