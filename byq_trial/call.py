@@ -6,6 +6,7 @@
 """
 import requests
 from byq_trial.auth import SimpleAuth
+import json
 
 
 class APICall:
@@ -58,6 +59,9 @@ class APICall:
         payload_template = self.payload_template.copy()
         if self.method == 'POST':
             for k, v in payload.items():
+                if isinstance(v, (dict, list)):
+                    # must encode this as string
+                    v = json.dumps(v, ensure_ascii=False)
                 payload_template.setdefault(k, v)
             response = requests.post(self.url,
                                      data=payload_template,
