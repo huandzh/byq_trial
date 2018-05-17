@@ -17,10 +17,9 @@ class APICall:
     def __init__(self, uri, auth, method='POST'):
         """Init call.
 
-        :param auth: auth using
-        :param uri: uri in docs
-        :param payload: extra params other than shared
-        :param method: method calling
+        :param auth: SimpleAuth instance, auth using
+        :param uri: str, uri in docs
+        :param method: str, method calling
 
         .. notes:: only `SimpleAuth` is implemented.
 
@@ -50,12 +49,16 @@ class APICall:
         """
         self.payload_template = self.auth.gen_payload_template()
 
-    def call(self, payload):
+    def call(self, payload, regen=True):
         """Call API.
 
-        :param payload:
+        :param payload: dict, payload other than `user_key`, `token`,
+        and `timestamp`
+        :param regen: bool, regenerate token if True
 
         """
+        if regen:
+            self.regen_payload_template()
         payload_template = self.payload_template.copy()
         if self.method == 'POST':
             for k, v in payload.items():
