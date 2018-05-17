@@ -23,6 +23,15 @@
 ```shell
 pip install requests
 ```
+## 下载byq_trial到本地
+
+使用git clone
+
+```shell
+git clone https://github.com/huandzh/byq_trial.git
+```
+
+直接下载zip包：点击本项目首页绿色按钮 `clone or download`
 
 ## 准备密钥文件
 
