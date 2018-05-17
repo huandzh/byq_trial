@@ -44,8 +44,8 @@ def get_timestamp_now():
 def get_yuqing_token_now(api_secret, api_key):
     """Get token for yuqing service, using timestamp for now.
 
-    :param api_secret: yuqing api secret
-    :param api_key: yuqing api key
+    :param api_secret: str, yuqing api secret
+    :param api_key: str, yuqing api key
     :returns: (timestamp, token) for yuqing service
     :rtype: (string, string)
 
@@ -61,7 +61,7 @@ def get_yuqing_token_now(api_secret, api_key):
 def parse_host_path_from(url):
     """Parse a url and get host and path
 
-    :param url: url
+    :param url: str, url
     :returns: (host, path)
     :rtype: (string, string)
 
@@ -88,10 +88,10 @@ class BasicBCESigner:
                  url, method=METHOD):
         """Init signer.
 
-        :param access_key: baidu AK
-        :param secret_key: baidu SK
-        :param url: full url calling
-        :param method: http method calling
+        :param access_key: str, baidu AK
+        :param secret_key: str, baidu SK
+        :param url: str, full url calling
+        :param method: str, http method calling
 
         """
         self.access_key = access_key
@@ -123,13 +123,13 @@ class BasicBCESigner:
                           bce_version):
         """Gen authorization string
 
-        :param access_key: baidu AK
-        :param secret_key: baidu SK
-        :param timestamp: timestamp
-        :param expire_time: expire_time as string
-        :param url: full url calling
-        :param method: http method calling
-        :param bce_version: bce_version string, like <bce-auth-v1>
+        :param access_key: str, baidu AK
+        :param secret_key: str, baidu SK
+        :param timestamp: str, timestamp
+        :param expire_time: str, expire_time as string
+        :param url: str, full url calling
+        :param method: str, http method calling
+        :param bce_version: str, bce_version like `bce-auth-v1`
         :returns: signature string
         :rtype: string
 
@@ -152,10 +152,10 @@ class BasicBCESigner:
     def _gen_signature(key, path, method, host):
         """Gen signature.
 
-        :param key: signing key
-        :param path: api endpoint
-        :param method: method calling
-        :param host: api host root
+        :param key: str, signing key
+        :param path: str, api endpoint
+        :param method: str, method calling
+        :param host: str, api host root
         :returns: hexdigest
         :rtype: string
 
@@ -177,11 +177,11 @@ class BasicBCESigner:
                          bce_version):
         """Gen signing key.
 
-        :param access_key: baidu AK
-        :param secret_key: baidu SK
-        :param timestamp: timestamp
-        :param expire_time: expire_time as string
-        :param bce_version: bce_version string, like <bce-auth-v1>
+        :param access_key: str, baidu AK
+        :param secret_key: str, baidu SK
+        :param timestamp: str, timestamp
+        :param expire_time: str, expire_time as string
+        :param bce_version: str, bce_version, like `bce-auth-v1`
         :returns: signing key
         :rtype: string
 
@@ -223,8 +223,8 @@ class SimpleAuth:
     def gen_authorization(self, url, method='POST'):
         """Generate authorization string
 
-        :param url: url calling
-        :param method: method calling
+        :param url: str, url calling
+        :param method: str, method calling
         :returns: authorization string
         :rtype: string
 
@@ -261,8 +261,8 @@ class SimpleAuth:
     def gen_headers(self, url, method='POST'):
         """Generate headers
 
-        :param url: url calling
-        :param method: method calling
+        :param url: str, url calling
+        :param method: str, method calling
         :returns: headers with authorization
         :rtype: dict
 
@@ -278,8 +278,8 @@ class SimpleAuth:
     def gen(self, url, method='POST'):
         """FIXME! briefly describe function
 
-        :param url: url calling
-        :param method: method calling
+        :param url: str, url calling
+        :param method: str, method calling
         :returns: (payload_template, headers)
         :rtype: (dict, dict)
 
